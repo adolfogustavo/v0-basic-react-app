@@ -1,30 +1,66 @@
-# Basic React app
+# 🌿 CalmBoard AI
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+**A calming wellness app for the workplace – powered by AI, built with React + Tailwind CSS.**  
+[🌐 Live Demo](https://v0-basic-react-app-three.vercel.app/)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/adolfogustavos-projects/v0-basic-react-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/bvjaqJzqfbQ)
+---
 
-## Overview
+## 🧘‍♀️ What is CalmBoard AI?
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+CalmBoard AI is a lightweight and elegant web app designed to help professionals pause, reflect, and recharge throughout the day.  
+By analyzing user emotions via natural language input, it provides personalized wellness experiences like:
 
-## Deployment
+- Visual moodboards based on uplifting imagery
+- Guided breathing animations
+- Music or video suggestions
+- A mini retro-style interactive game
 
-Your project is live at:
+---
 
-**[https://vercel.com/adolfogustavos-projects/v0-basic-react-app](https://vercel.com/adolfogustavos-projects/v0-basic-react-app)**
+## ✨ Features
 
-## Build your app
+- ✅ Emotion check-in with AI-powered reflection
+- ✅ Moodboard generator (based on calming keywords)
+- ✅ Breathing animations and focus tips
+- ✅ Music/video suggestions (switchable by user)
+- ✅ Mood suggestions with pill-style UI
+- ✅ Accessibility support (ARIA + keyboard nav)
+- ✅ Fun hidden Easter egg and retro mini-game
+- ✅ Fully responsive and fast
 
-Continue building your app on:
+---
 
-**[https://v0.dev/chat/projects/bvjaqJzqfbQ](https://v0.dev/chat/projects/bvjaqJzqfbQ)**
+## 🚀 Live App
 
-## How It Works
+👉 [https://v0-basic-react-app-three.vercel.app/](https://v0-basic-react-app-three.vercel.app/)
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
+
+## 🛠️ Tech Stack
+
+- React (Vite)
+- Tailwind CSS
+- OpenAI API (for mood analysis and suggestions)
+- Unsplash API (for image moodboards)
+- YouTube/Spotify Embeds
+- Deployed on Vercel
+
+---
+
+## 📦 Getting Started (Dev Setup)
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/calmboard-ai.git
+cd calmboard-ai
+
+# Install dependencies
+npm install
+
+# Add your environment variables
+touch .env.local
+# Inside .env.local, add:
+# REACT_APP_OPENAI_API_KEY=your_key_here
+
+# Run the dev server
+pnpm run dev
