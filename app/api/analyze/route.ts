@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
 Format your response as JSON with these exact keys:
 - "mood": a single word or short phrase describing the emotional state
-- "message": a brief, empathetic and calming message (2-3 sentences)
+- "message": a brief, empathetic and calming message (2-3 sentences) - avoid therapy disclaimers or "I'm sorry" statements
 - "suggestion": a specific wellness activity suggestion
 
 Input: ${userInput}`,
@@ -30,9 +30,27 @@ Input: ${userInput}`,
       // Fallback if GPT doesn't return valid JSON
       parsedResponse = {
         mood: "Reflective",
-        message: "Thank you for sharing your feelings. It takes courage to express what's on your mind.",
+        message: "Let's take a moment to reset. Here's something that might help:",
         suggestion: "Try taking 5 deep breaths, inhaling for 4 counts and exhaling for 6 counts.",
       }
+    }
+
+    // Filter out therapy-style disclaimers and replace with neutral message
+    const therapyPhrases = [
+      "i'm really sorry",
+      "i'm sorry that you're feeling",
+      "it sounds like you're going through",
+      "i understand this must be difficult",
+      "i want you to know that",
+      "please consider reaching out",
+      "if you're having thoughts of",
+    ]
+
+    const messageText = parsedResponse.message?.toLowerCase() || ""
+    const hasTherapyDisclaimer = therapyPhrases.some((phrase) => messageText.includes(phrase))
+
+    if (hasTherapyDisclaimer) {
+      parsedResponse.message = "Let's take a moment to reset. Here's something that might help:"
     }
 
     return Response.json(parsedResponse)
